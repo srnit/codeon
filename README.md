@@ -4,4 +4,4 @@ The repo contain all my programs which is written by me during the competitive c
 
 Languages used: C++, C, Java
 
-Author: Sudhanshu 
+Author: Sudhanshu Raman
