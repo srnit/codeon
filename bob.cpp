@@ -9,13 +9,14 @@
       {
           char a,b;
           cin>>a>>b;
-          a=tolower(a);
-          b=tolower(b);
-          //cout<<a<<"\n";
+          a=toupper(a);
+          b=toupper(b);
+         
           if(mp.find(a)==mp.end() && mp.find(b)==mp.end())
-          {mp[a]=b;
-          mp[b]=a;
-              //cout<<2;
+          {
+          	mp[a]=b;
+            mp[b]=a;
+              
           }
           else if(mp.find(a)!=mp.end() && mp.find(b)==mp.end())
           {  
@@ -35,7 +36,7 @@
              mp[a]=temp;
           }
           else{}
-          //cout<<mp[a]<<" "<<mp[b]<<"\n";
+         
           
       }
       map<char,char>::iterator it;

@@ -8,10 +8,8 @@ for i in range(n):
 			if(str1[i] in str2):
 				print "YES";
 				check=1;
-		if(check==0):
-			print "NO";
-	if(len(str2)>len(str1)):
-		for i in range(len(str1)):
+	if(len(str2)>=len(str1)):
+		for i in range(len(str2)):
 			if(str1[i] in str2):
 				print "YES";
 				check=1;

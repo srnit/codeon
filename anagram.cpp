@@ -1,47 +1,55 @@
 #include<bits/stdc++.h>
 using namespace std;
-int hasfun(char c)
-{
-  return (c-'a');
-}
 int main()
 {
-	int n;
-	cin>>n;
-	string s,t;
-	
-	while(n--)
-	{
-		int hash[100001]={0};
-	int fre1[100001]={0};
-	int fre2[100001]={0};
-		int count=0;
-		cin>>s;
-		cin>>t;
-		for(int i=0;s[i]!='\0';i++)
+	int t;
+	cin>>t;
+	while(t--)
+	{ string str;
+		cin>>str;
+		int hash[1001]={0};
+		int check,check1;
+		check1=check=0;
+		for(int i=0;i<str.length();i++)
 		{
-           int index=hasfun(s[i]);
-           hash[index]=(1);
-           fre1[index]++;
-
+			hash[str[i]-'a']++;
 		}
-		for(int i=0;t[i]!='\0';i++)
+		if(str.length()%2!=0)
 		{
-			int index=hasfun(t[i]);
-			if(hash[index]==1)
+			for(int i=0;i<str.length();i++)
 			{
-				if(fre1[index]<=fre2[index])
-					count++;
-				else
-					fre2[index]++;
+				if(hash[str[i]-'a']%2!=0 && check==0)
+				{
+					check=1;
+
+				}
+				else if(hash[str[i]-'a']%2!=0 && check==1)
+				{
+                 check1=1;
+                 break;   
+				}
+
 			}
+			if(check1==1)
+				cout<<"No\n";
 			else
-				count++;
-
+				cout<<"Yes\n";
 		}
-		cout<<2*count<<"\n";
-
-
+		else 
+		{
+			check1=0;
+			for(int i=0;i<str.length();i++)
+			{
+				if(hash[str[i]-'a']%2!=0)
+				{
+					check1=1;
+					break;
+				}
+			}
+			if(check1==1)
+				cout<<"No\n";
+			else
+				cout<<"Yes\n";
+		}
 	}
-
 }
