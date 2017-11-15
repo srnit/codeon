@@ -34,4 +34,4 @@
             cout<<ans*c<<endl;
         }
         return 0;
-    }
+    }Leo60594:Blue60594
