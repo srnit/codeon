@@ -25,7 +25,7 @@ int Arr[1001];
     	int count=0;
     	vector<int>vec;
     	vec.clear();
-    	int vis[1001]={0};
+    	int vis[1001]={0}
     	for(int i=0;i<n;i++)
     	{
     		count=0;

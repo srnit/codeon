@@ -1,40 +1,43 @@
 #include<bits/stdc++.h>
 using namespace std;
-stack <int>st;
 int main()
 {
-	int t,p,ini,second,first,id;
-	char c;
+	int t,n;
 	
 	cin>>t;
 	while(t--)
 	{
-	  while(!st.empty())
-		{	st.pop();
-		}
-		cin>>p>>ini;
-		st.push(ini);
-		while(p--)
+		cin>>n;
+		int hash[n+1]={0};
+		string s;
+		int arr[n+1];
+		for(int i=0;i<n;i++)
 		{
-			cin>>c;
-			if(c=='P')
-			{
-				cin>>id;
-				st.push(id);
-			}
-			else
-			{
-				int second=st.top();
+			cin>>s;
+			arr[i]=int(s-'a');
+			hash[arr[i]]++;
 
-				st.pop();
-				int first=st.top();
-				st.pop();
-				st.push(second);
-				st.push(first);
-			}
-			
 		}
-		cout<<"Player "<<st.top()<<"\n";
-			
+		int max=0;
+		int check=0;
+		for(int i=0;i<n;i++)
+		{
+			//cin>>s[i];
+			if(hash[arr[i]]>max && i==0)
+			{
+				max=arr[i];
+			}
+			else if(hash[arr[i]]==max)
+			{
+               check=max;
+
+			}
+
+		}
+		if(check==max)
+			cout<<"Draw\n";
+		else
+		cout<<char(max+'a')<<"\n";
+
 	}
 }

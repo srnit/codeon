@@ -8,7 +8,7 @@ void initialize(long int dist[],int n)
 		dist[i]=inf;
 }
 
-void bellman(long int dist[],vector<int> v[],int n)
+void bellman(long int dist[],vector<long int> v[],int n)
 {
 	//cout<<"1";
 	dist[1]=0;
@@ -36,8 +36,8 @@ int main()
 	
 	int n,m,a,b,w;
 	cin>>n>>m;
-	vector<int>v[n+2];
-	long int dist[n+2];
+	vector<long int>v[n+2];
+	intdist[n+2];
 	initialize(dist,n);
 	for(int i=1;i<=m;i++)
 	{
